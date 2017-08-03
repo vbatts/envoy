@@ -1,0 +1,5 @@
+FROM centos:7
+COPY ./build_container_centos.sh ./build_and_install_deps.sh ./build_deps.sh ./target_recipes.bzl ./recipe_wrapper.sh ./Makefile /
+COPY ./build_recipes/*.sh /build_recipes/
+RUN ./build_container_centos.sh
+RUN ./build_deps.sh
